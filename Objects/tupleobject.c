@@ -764,11 +764,14 @@ PyDoc_STRVAR(count_doc,
 PyDoc_STRVAR(sizeof_doc,
 "T.__sizeof__() -- size of T in memory, in bytes");
 
+/* modified for cpython-pt */
 static PyMethodDef tuple_methods[] = {
     {"__getnewargs__",          (PyCFunction)tuple_getnewargs,  METH_NOARGS},
     {"__sizeof__",      (PyCFunction)tuple_sizeof, METH_NOARGS, sizeof_doc},
     {"index",           (PyCFunction)tupleindex,  METH_VARARGS, index_doc},
+    {"index_",           (PyCFunction)tupleindex,  METH_VARARGS, index_doc},
     {"count",           (PyCFunction)tuplecount,  METH_O, count_doc},
+    {"contar_",           (PyCFunction)tuplecount,  METH_O, count_doc},
     {NULL,              NULL}           /* sentinel */
 };
 

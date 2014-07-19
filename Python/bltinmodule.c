@@ -2344,50 +2344,89 @@ PyTypeObject PyZip_Type = {
     PyObject_GC_Del,                    /* tp_free */
 };
 
-
+/* modified for cpython-pt */
 static PyMethodDef builtin_methods[] = {
     {"__build_class__", (PyCFunction)builtin___build_class__,
      METH_VARARGS | METH_KEYWORDS, build_class_doc},
     {"__import__",      (PyCFunction)builtin___import__, METH_VARARGS | METH_KEYWORDS, import_doc},
     {"abs",             builtin_abs,        METH_O, abs_doc},
+    {"abs_",             builtin_abs,        METH_O, abs_doc},
     {"all",             builtin_all,        METH_O, all_doc},
+    {"todos_",             builtin_all,        METH_O, all_doc},
     {"any",             builtin_any,        METH_O, any_doc},
+    {"qualquer_",             builtin_any,        METH_O, any_doc},
     {"ascii",           builtin_ascii,      METH_O, ascii_doc},
+    {"ascii_",           builtin_ascii,      METH_O, ascii_doc},
     {"bin",             builtin_bin,        METH_O, bin_doc},
+    {"bin_",             builtin_bin,        METH_O, bin_doc},
     {"callable",        builtin_callable,   METH_O, callable_doc},
+    {"chamavel_",        builtin_callable,   METH_O, callable_doc},
     {"chr",             builtin_chr,        METH_VARARGS, chr_doc},
+    {"car_",             builtin_chr,        METH_VARARGS, chr_doc},
     {"compile",         (PyCFunction)builtin_compile,    METH_VARARGS | METH_KEYWORDS, compile_doc},
+    {"compilar_",         (PyCFunction)builtin_compile,    METH_VARARGS | METH_KEYWORDS, compile_doc},
     {"delattr",         builtin_delattr,    METH_VARARGS, delattr_doc},
+    {"delatr_",         builtin_delattr,    METH_VARARGS, delattr_doc},
     {"dir",             builtin_dir,        METH_VARARGS, dir_doc},
+    {"dir_",             builtin_dir,        METH_VARARGS, dir_doc},
     {"divmod",          builtin_divmod,     METH_VARARGS, divmod_doc},
+    {"divresto_",          builtin_divmod,     METH_VARARGS, divmod_doc},
     {"eval",            builtin_eval,       METH_VARARGS, eval_doc},
+    {"aval_",            builtin_eval,       METH_VARARGS, eval_doc},
     {"exec",        builtin_exec,       METH_VARARGS, exec_doc},
+    {"exec_",        builtin_exec,       METH_VARARGS, exec_doc},
     {"format",          builtin_format,     METH_VARARGS, format_doc},
+    {"formatar_",          builtin_format,     METH_VARARGS, format_doc},
     {"getattr",         builtin_getattr,    METH_VARARGS, getattr_doc},
+    {"pegaratr_",         builtin_getattr,    METH_VARARGS, getattr_doc},
     {"globals",         (PyCFunction)builtin_globals,    METH_NOARGS, globals_doc},
+    {"globais_",         (PyCFunction)builtin_globals,    METH_NOARGS, globals_doc},
     {"hasattr",         builtin_hasattr,    METH_VARARGS, hasattr_doc},
+    {"tematr_",         builtin_hasattr,    METH_VARARGS, hasattr_doc},
     {"hash",            builtin_hash,       METH_O, hash_doc},
+    {"hash_",            builtin_hash,       METH_O, hash_doc},
     {"hex",             builtin_hex,        METH_O, hex_doc},
+    {"hex_",             builtin_hex,        METH_O, hex_doc},
     {"id",              builtin_id,         METH_O, id_doc},
+    {"id_",              builtin_id,         METH_O, id_doc},
     {"input",           builtin_input,      METH_VARARGS, input_doc},
+    {"entrada_",           builtin_input,      METH_VARARGS, input_doc},
     {"isinstance",  builtin_isinstance, METH_VARARGS, isinstance_doc},
+    {"ehinstancia_",  builtin_isinstance, METH_VARARGS, isinstance_doc},
     {"issubclass",  builtin_issubclass, METH_VARARGS, issubclass_doc},
+    {"ehsubclasse_",  builtin_issubclass, METH_VARARGS, issubclass_doc},
     {"iter",            builtin_iter,       METH_VARARGS, iter_doc},
+    {"iter_",            builtin_iter,       METH_VARARGS, iter_doc},
     {"len",             builtin_len,        METH_O, len_doc},
+    {"compr_",             builtin_len,        METH_O, len_doc},
     {"locals",          (PyCFunction)builtin_locals,     METH_NOARGS, locals_doc},
+    {"locais_",          (PyCFunction)builtin_locals,     METH_NOARGS, locals_doc},
     {"max",             (PyCFunction)builtin_max,        METH_VARARGS | METH_KEYWORDS, max_doc},
+    {"max_",             (PyCFunction)builtin_max,        METH_VARARGS | METH_KEYWORDS, max_doc},
     {"min",             (PyCFunction)builtin_min,        METH_VARARGS | METH_KEYWORDS, min_doc},
+    {"min_",             (PyCFunction)builtin_min,        METH_VARARGS | METH_KEYWORDS, min_doc},
     {"next",            (PyCFunction)builtin_next,       METH_VARARGS, next_doc},
+    {"proximo_",            (PyCFunction)builtin_next,       METH_VARARGS, next_doc},
     {"oct",             builtin_oct,        METH_O, oct_doc},
+    {"octal_",             builtin_oct,        METH_O, oct_doc},
     {"ord",             builtin_ord,        METH_O, ord_doc},
+    {"ord_",             builtin_ord,        METH_O, ord_doc},
     {"pow",             builtin_pow,        METH_VARARGS, pow_doc},
+    {"pot_",             builtin_pow,        METH_VARARGS, pow_doc},
     {"print",           (PyCFunction)builtin_print,      METH_VARARGS | METH_KEYWORDS, print_doc},
+    {"imprimir_",           (PyCFunction)builtin_print,      METH_VARARGS | METH_KEYWORDS, print_doc},
     {"repr",            builtin_repr,       METH_O, repr_doc},
+    {"repr_",            builtin_repr,       METH_O, repr_doc},
     {"round",           (PyCFunction)builtin_round,      METH_VARARGS | METH_KEYWORDS, round_doc},
+    {"arredondar_",           (PyCFunction)builtin_round,      METH_VARARGS | METH_KEYWORDS, round_doc},
     {"setattr",         builtin_setattr,    METH_VARARGS, setattr_doc},
+    {"colocaratr_",         builtin_setattr,    METH_VARARGS, setattr_doc},
     {"sorted",          (PyCFunction)builtin_sorted,     METH_VARARGS | METH_KEYWORDS, sorted_doc},
+    {"ordenado_",          (PyCFunction)builtin_sorted,     METH_VARARGS | METH_KEYWORDS, sorted_doc},
     {"sum",             builtin_sum,        METH_VARARGS, sum_doc},
+    {"soma_",             builtin_sum,        METH_VARARGS, sum_doc},
     {"vars",            builtin_vars,       METH_VARARGS, vars_doc},
+    {"vars_",            builtin_vars,       METH_VARARGS, vars_doc},
     {NULL,              NULL},
 };
 
@@ -2430,42 +2469,72 @@ _PyBuiltin_Init(void)
 #define ADD_TO_ALL(OBJECT) (void)0
 #endif
 
+/* modified for cpython-pt */
 #define SETBUILTIN(NAME, OBJECT) \
     if (PyDict_SetItemString(dict, NAME, (PyObject *)OBJECT) < 0)       \
         return NULL;                                                    \
     ADD_TO_ALL(OBJECT)
 
     SETBUILTIN("None",                  Py_None);
+    SETBUILTIN("Nada_",                  Py_None);
     SETBUILTIN("Ellipsis",              Py_Ellipsis);
+    SETBUILTIN("Elipse_",              Py_Ellipsis);
     SETBUILTIN("NotImplemented",        Py_NotImplemented);
+    SETBUILTIN("NaoImplementado",        Py_NotImplemented);
     SETBUILTIN("False",                 Py_False);
+    SETBUILTIN("Falso_",                 Py_False);
     SETBUILTIN("True",                  Py_True);
+    SETBUILTIN("Verdadeiro_",                  Py_True);
     SETBUILTIN("bool",                  &PyBool_Type);
+    SETBUILTIN("bool_",                  &PyBool_Type);
     SETBUILTIN("memoryview",        &PyMemoryView_Type);
+    SETBUILTIN("vistadememoria_",        &PyMemoryView_Type);
     SETBUILTIN("bytearray",             &PyByteArray_Type);
+    SETBUILTIN("arranjodebytes",             &PyByteArray_Type);
     SETBUILTIN("bytes",                 &PyBytes_Type);
+    SETBUILTIN("bytes_",                 &PyBytes_Type);
     SETBUILTIN("classmethod",           &PyClassMethod_Type);
+    SETBUILTIN("metododeclasse_",           &PyClassMethod_Type);
     SETBUILTIN("complex",               &PyComplex_Type);
+    SETBUILTIN("complexo_",               &PyComplex_Type);
     SETBUILTIN("dict",                  &PyDict_Type);
+    SETBUILTIN("dic_",                  &PyDict_Type);
     SETBUILTIN("enumerate",             &PyEnum_Type);
+    SETBUILTIN("enumerar_",             &PyEnum_Type);
     SETBUILTIN("filter",                &PyFilter_Type);
+    SETBUILTIN("filtrar_",                &PyFilter_Type);
     SETBUILTIN("float",                 &PyFloat_Type);
+    SETBUILTIN("decimal_",                 &PyFloat_Type);
     SETBUILTIN("frozenset",             &PyFrozenSet_Type);
     SETBUILTIN("property",              &PyProperty_Type);
     SETBUILTIN("int",                   &PyLong_Type);
+    SETBUILTIN("int_",                   &PyLong_Type);
     SETBUILTIN("list",                  &PyList_Type);
+    SETBUILTIN("lista_",                  &PyList_Type);
     SETBUILTIN("map",                   &PyMap_Type);
+    SETBUILTIN("mapear_",                   &PyMap_Type);
     SETBUILTIN("object",                &PyBaseObject_Type);
+    SETBUILTIN("objeto_",                &PyBaseObject_Type);
     SETBUILTIN("range",                 &PyRange_Type);
+    SETBUILTIN("intervalo_",                 &PyRange_Type);
     SETBUILTIN("reversed",              &PyReversed_Type);
+    SETBUILTIN("reverso_",              &PyReversed_Type);
     SETBUILTIN("set",                   &PySet_Type);
+    SETBUILTIN("set_",                   &PySet_Type);
     SETBUILTIN("slice",                 &PySlice_Type);
+    SETBUILTIN("partir_",                 &PySlice_Type);
     SETBUILTIN("staticmethod",          &PyStaticMethod_Type);
+    SETBUILTIN("metodoestatico_",          &PyStaticMethod_Type);
     SETBUILTIN("str",                   &PyUnicode_Type);
+    SETBUILTIN("texto_",                   &PyUnicode_Type);
     SETBUILTIN("super",                 &PySuper_Type);
+    SETBUILTIN("super_",                 &PySuper_Type);
     SETBUILTIN("tuple",                 &PyTuple_Type);
+    SETBUILTIN("tuple_",                 &PyTuple_Type);
     SETBUILTIN("type",                  &PyType_Type);
+    SETBUILTIN("tipo_",                  &PyType_Type);
     SETBUILTIN("zip",                   &PyZip_Type);
+    SETBUILTIN("zipar_",                   &PyZip_Type);
     debug = PyBool_FromLong(Py_OptimizeFlag == 0);
     if (PyDict_SetItemString(dict, "__debug__", debug) < 0) {
         Py_XDECREF(debug);

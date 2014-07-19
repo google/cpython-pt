@@ -2355,21 +2355,33 @@ PyDoc_STRVAR(sort_doc,
 
 static PyObject *list_subscript(PyListObject*, PyObject*);
 
+/* modified for cpython-pt */
 static PyMethodDef list_methods[] = {
     {"__getitem__", (PyCFunction)list_subscript, METH_O|METH_COEXIST, getitem_doc},
     {"__reversed__",(PyCFunction)list_reversed, METH_NOARGS, reversed_doc},
     {"__sizeof__",  (PyCFunction)list_sizeof, METH_NOARGS, sizeof_doc},
     {"clear",           (PyCFunction)listclear,   METH_NOARGS, clear_doc},
+    {"apagar_",           (PyCFunction)listclear,   METH_NOARGS, clear_doc},
     {"copy",            (PyCFunction)listcopy,   METH_NOARGS, copy_doc},
+    {"copiar_",            (PyCFunction)listcopy,   METH_NOARGS, copy_doc},
     {"append",          (PyCFunction)listappend,  METH_O, append_doc},
+    {"anexar_",          (PyCFunction)listappend,  METH_O, append_doc},
     {"insert",          (PyCFunction)listinsert,  METH_VARARGS, insert_doc},
+    {"inserir_",          (PyCFunction)listinsert,  METH_VARARGS, insert_doc},
     {"extend",          (PyCFunction)listextend,  METH_O, extend_doc},
+    {"extender_",          (PyCFunction)listextend,  METH_O, extend_doc},
     {"pop",             (PyCFunction)listpop,     METH_VARARGS, pop_doc},
+    {"pop_",             (PyCFunction)listpop,     METH_VARARGS, pop_doc},
     {"remove",          (PyCFunction)listremove,  METH_O, remove_doc},
+    {"remover_",          (PyCFunction)listremove,  METH_O, remove_doc},
     {"index",           (PyCFunction)listindex,   METH_VARARGS, index_doc},
+    {"index_",           (PyCFunction)listindex,   METH_VARARGS, index_doc},
     {"count",           (PyCFunction)listcount,   METH_O, count_doc},
+    {"contar_",           (PyCFunction)listcount,   METH_O, count_doc},
     {"reverse",         (PyCFunction)listreverse, METH_NOARGS, reverse_doc},
+    {"inverter_",         (PyCFunction)listreverse, METH_NOARGS, reverse_doc},
     {"sort",            (PyCFunction)listsort,    METH_VARARGS | METH_KEYWORDS, sort_doc},
+    {"ordenar_",            (PyCFunction)listsort,    METH_VARARGS | METH_KEYWORDS, sort_doc},
     {NULL,              NULL}           /* sentinel */
 };
 

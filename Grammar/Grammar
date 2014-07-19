@@ -10,6 +10,8 @@
 # NOTE WELL: You should also follow all the steps listed in PEP 306,
 # "How to Change Python's Grammar"
 
+# NOTE WELL TOO: This file has been heavily modified for use with cpython-pt.
+
 # Start symbols for the grammar:
 #       single_input is a single interactive statement;
 #       file_input is a module or sequence of commands read from an input file;
@@ -22,7 +24,7 @@ eval_input: testlist NEWLINE* ENDMARKER
 decorator: '@' dotted_name [ '(' [arglist] ')' ] NEWLINE
 decorators: decorator+
 decorated: decorators (classdef | funcdef)
-funcdef: 'def' NAME parameters ['->' test] ':' suite
+funcdef: ('def' NAME parameters ['->' test] ':' suite) | ('def_' NAME parameters ['->' test] ':' suite)
 parameters: '(' [typedargslist] ')'
 typedargslist: (tfpdef ['=' test] (',' tfpdef ['=' test])* [','
        ['*' [tfpdef] (',' tfpdef ['=' test])* [',' '**' tfpdef] | '**' tfpdef]]
@@ -43,54 +45,72 @@ testlist_star_expr: (test|star_expr) (',' (test|star_expr))* [',']
 augassign: ('+=' | '-=' | '*=' | '/=' | '%=' | '&=' | '|=' | '^=' |
             '<<=' | '>>=' | '**=' | '//=')
 # For normal assignments, additional restrictions enforced by the interpreter
-del_stmt: 'del' exprlist
-pass_stmt: 'pass'
+del_stmt: ('del' exprlist) | ('del_' exprlist)
+pass_stmt: 'pass' | 'passar_'
 flow_stmt: break_stmt | continue_stmt | return_stmt | raise_stmt | yield_stmt
-break_stmt: 'break'
-continue_stmt: 'continue'
-return_stmt: 'return' [testlist]
+break_stmt: 'break' | 'quebrar_'
+continue_stmt: 'continue' | 'continuar_'
+return_stmt: ('return' [testlist]) | ('retornar_' [testlist])
 yield_stmt: yield_expr
-raise_stmt: 'raise' [test ['from' test]]
+raise_stmt: ('raise' [test ['from' test]]) | ('levantar_' [test ['de_' test]])
 import_stmt: import_name | import_from
-import_name: 'import' dotted_as_names
+import_name: ('import' dotted_as_names) | ('importar_' dotted_as_names)
 # note below: the ('.' | '...') is necessary because '...' is tokenized as ELLIPSIS
-import_from: ('from' (('.' | '...')* dotted_name | ('.' | '...')+)
-              'import' ('*' | '(' import_as_names ')' | import_as_names))
-import_as_name: NAME ['as' NAME]
-dotted_as_name: dotted_name ['as' NAME]
+import_from: (('from' (('.' | '...')* dotted_name | ('.' | '...')+)
+              'import' ('*' | '(' import_as_names ')' | import_as_names)) |
+             ('de_' (('.' | '...')* dotted_name | ('.' | '...')+)
+              'importar_' ('*' | '(' import_as_names ')' | import_as_names))) 
+import_as_name: (NAME ['as' NAME]) | (NAME ['como_' NAME])
+dotted_as_name: (dotted_name ['as' NAME]) | (dotted_name ['como_' NAME]) 
 import_as_names: import_as_name (',' import_as_name)* [',']
 dotted_as_names: dotted_as_name (',' dotted_as_name)*
 dotted_name: NAME ('.' NAME)*
-global_stmt: 'global' NAME (',' NAME)*
-nonlocal_stmt: 'nonlocal' NAME (',' NAME)*
-assert_stmt: 'assert' test [',' test]
+global_stmt: ('global' NAME (',' NAME)*) | ('global_' NAME (',' NAME)*)
+nonlocal_stmt: ('nonlocal' NAME (',' NAME)*) | ('naolocal' NAME (',' NAME)*)
+assert_stmt: ('assert' test [',' test]) | ('afirmar_' test [',' test])
 
 compound_stmt: if_stmt | while_stmt | for_stmt | try_stmt | with_stmt | funcdef | classdef | decorated
-if_stmt: 'if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]
-while_stmt: 'while' test ':' suite ['else' ':' suite]
-for_stmt: 'for' exprlist 'in' testlist ':' suite ['else' ':' suite]
-try_stmt: ('try' ':' suite
-           ((except_clause ':' suite)+
-            ['else' ':' suite]
-            ['finally' ':' suite] |
-           'finally' ':' suite))
-with_stmt: 'with' with_item (',' with_item)*  ':' suite
-with_item: test ['as' expr]
+if_stmt: (('if' test ':' suite ('elif' test ':' suite)* ['else' ':' suite]) | 
+         ('se_' test ':' suite ('se_se_' test ':' suite)* ['senao_' ':' suite]))
+
+while_stmt: (('while' test ':' suite ['else' ':' suite]) | 
+             ('enquanto_' test ':' suite ['senao_' ':' suite]))
+for_stmt: (('for' exprlist 'in' testlist ':' suite ['else' ':' suite]) |
+           ('para_' exprlist 'em_' testlist ':' suite ['senao_' ':' suite]))
+try_stmt: (('try' ':' suite
+            ((except_clause ':' suite)+
+             ['else' ':' suite]
+             ['finally' ':' suite] |
+            'finally' ':' suite)) | 
+           ('tentar_' ':' suite
+            ((except_clause ':' suite)+
+             ['senao_' ':' suite]
+             ['finalmente_' ':' suite] |
+            'finalmente_' ':' suite)))
+with_stmt: (('with' with_item (',' with_item)*  ':' suite) |
+            ('com_' with_item (',' with_item)*  ':' suite))
+with_item: test ['as' expr] | test ['como_' expr]
 # NB compile.c makes sure that the default except clause is last
-except_clause: 'except' [test ['as' NAME]]
+except_clause: (('except' [test ['as' NAME]]) | ('exceto_' [test ['como_' NAME]]))
 suite: simple_stmt | NEWLINE INDENT stmt+ DEDENT
 
-test: or_test ['if' or_test 'else' test] | lambdef
+test: ((or_test ['if' or_test 'else' test] | lambdef) | 
+       (or_test ['se_' or_test 'senao_' test] | lambdef))
 test_nocond: or_test | lambdef_nocond
-lambdef: 'lambda' [varargslist] ':' test
-lambdef_nocond: 'lambda' [varargslist] ':' test_nocond
-or_test: and_test ('or' and_test)*
-and_test: not_test ('and' not_test)*
-not_test: 'not' not_test | comparison
+lambdef: (('lambda' [varargslist] ':' test) | 
+          ('lambda_' [varargslist] ':' test))
+lambdef_nocond: (('lambda' [varargslist] ':' test_nocond) |
+                 ('lambda_' [varargslist] ':' test_nocond))
+or_test: ((and_test ('or' and_test)*) | 
+          (and_test ('ou_' and_test)*))
+and_test: ((not_test ('and' not_test)*) |
+           (not_test ('e_' not_test)*))
+not_test: (('not' not_test | comparison) |
+           ('nao' not_test | comparison))
 comparison: expr (comp_op expr)*
 # <> isn't actually a valid comparison operator in Python. It's here for the
 # sake of a __future__ import described in PEP 401
-comp_op: '<'|'>'|'=='|'>='|'<='|'<>'|'!='|'in'|'not' 'in'|'is'|'is' 'not'
+comp_op: '<'|'>'|'=='|'>='|'<='|'<>'|'!='|'in'|'not' 'in'|'is'|'is' 'not'|'em_'|'nao_' 'em_'|'eh_ '|'nao_' 'eh_'
 star_expr: '*' expr
 expr: xor_expr ('|' xor_expr)*
 xor_expr: and_expr ('^' and_expr)*
@@ -114,7 +134,8 @@ testlist: test (',' test)* [',']
 dictorsetmaker: ( (test ':' test (comp_for | (',' test ':' test)* [','])) |
                   (test (comp_for | (',' test)* [','])) )
 
-classdef: 'class' NAME ['(' [arglist] ')'] ':' suite
+classdef: (('class' NAME ['(' [arglist] ')'] ':' suite) |
+           ('classe_' NAME ['(' [arglist] ')'] ':' suite))
 
 arglist: (argument ',')* (argument [',']
                          |'*' test (',' argument)* [',' '**' test] 
@@ -123,11 +144,15 @@ arglist: (argument ',')* (argument [',']
 # results in an ambiguity. ast.c makes sure it's a NAME.
 argument: test [comp_for] | test '=' test  # Really [keyword '='] test
 comp_iter: comp_for | comp_if
-comp_for: 'for' exprlist 'in' or_test [comp_iter]
-comp_if: 'if' test_nocond [comp_iter]
+comp_for: (('for' exprlist 'in' or_test [comp_iter]) |
+           ('para_' exprlist 'em_' or_test [comp_iter]))
+comp_if: (('if' test_nocond [comp_iter]) |
+          ('se_' test_nocond [comp_iter]))
 
 # not used in grammar, but may appear in "node" passed from Parser to Compiler
 encoding_decl: NAME
 
-yield_expr: 'yield' [yield_arg]
-yield_arg: 'from' test | testlist
+yield_expr: (('yield' [yield_arg]) |
+             ('ceder_' [yield_arg]))
+yield_arg: (('from' test | testlist) |
+            ('de_' test | testlist))
