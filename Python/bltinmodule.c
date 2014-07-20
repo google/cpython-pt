@@ -2418,9 +2418,9 @@ static PyMethodDef builtin_methods[] = {
     {"repr",            builtin_repr,       METH_O, repr_doc},
     {"repr_",            builtin_repr,       METH_O, repr_doc},
     {"round",           (PyCFunction)builtin_round,      METH_VARARGS | METH_KEYWORDS, round_doc},
-    {"arredondar_",           (PyCFunction)builtin_round,      METH_VARARGS | METH_KEYWORDS, round_doc},
+    {"arred_",           (PyCFunction)builtin_round,      METH_VARARGS | METH_KEYWORDS, round_doc},
     {"setattr",         builtin_setattr,    METH_VARARGS, setattr_doc},
-    {"colocaratr_",         builtin_setattr,    METH_VARARGS, setattr_doc},
+    {"poratr_",         builtin_setattr,    METH_VARARGS, setattr_doc},
     {"sorted",          (PyCFunction)builtin_sorted,     METH_VARARGS | METH_KEYWORDS, sorted_doc},
     {"ordenado_",          (PyCFunction)builtin_sorted,     METH_VARARGS | METH_KEYWORDS, sorted_doc},
     {"sum",             builtin_sum,        METH_VARARGS, sum_doc},
@@ -2476,19 +2476,16 @@ _PyBuiltin_Init(void)
     ADD_TO_ALL(OBJECT)
 
     SETBUILTIN("None",                  Py_None);
-    SETBUILTIN("Nada_",                  Py_None);
     SETBUILTIN("Ellipsis",              Py_Ellipsis);
-    SETBUILTIN("Elipse_",              Py_Ellipsis);
     SETBUILTIN("NotImplemented",        Py_NotImplemented);
-    SETBUILTIN("NaoImplementado",        Py_NotImplemented);
     SETBUILTIN("False",                 Py_False);
     SETBUILTIN("Falso_",                 Py_False);
     SETBUILTIN("True",                  Py_True);
-    SETBUILTIN("Verdadeiro_",                  Py_True);
+    SETBUILTIN("Verd_",                  Py_True);
     SETBUILTIN("bool",                  &PyBool_Type);
     SETBUILTIN("bool_",                  &PyBool_Type);
     SETBUILTIN("memoryview",        &PyMemoryView_Type);
-    SETBUILTIN("vistadememoria_",        &PyMemoryView_Type);
+    SETBUILTIN("visaomemoria_",        &PyMemoryView_Type);
     SETBUILTIN("bytearray",             &PyByteArray_Type);
     SETBUILTIN("arranjodebytes",             &PyByteArray_Type);
     SETBUILTIN("bytes",                 &PyBytes_Type);
@@ -2506,7 +2503,9 @@ _PyBuiltin_Init(void)
     SETBUILTIN("float",                 &PyFloat_Type);
     SETBUILTIN("decimal_",                 &PyFloat_Type);
     SETBUILTIN("frozenset",             &PyFrozenSet_Type);
+    SETBUILTIN("setcongelado_",             &PyFrozenSet_Type);
     SETBUILTIN("property",              &PyProperty_Type);
+    SETBUILTIN("prop_",              &PyProperty_Type);
     SETBUILTIN("int",                   &PyLong_Type);
     SETBUILTIN("int_",                   &PyLong_Type);
     SETBUILTIN("list",                  &PyList_Type);
@@ -2520,7 +2519,7 @@ _PyBuiltin_Init(void)
     SETBUILTIN("reversed",              &PyReversed_Type);
     SETBUILTIN("reverso_",              &PyReversed_Type);
     SETBUILTIN("set",                   &PySet_Type);
-    SETBUILTIN("set_",                   &PySet_Type);
+    SETBUILTIN("conjunto_",                   &PySet_Type);
     SETBUILTIN("slice",                 &PySlice_Type);
     SETBUILTIN("partir_",                 &PySlice_Type);
     SETBUILTIN("staticmethod",          &PyStaticMethod_Type);
@@ -2530,7 +2529,7 @@ _PyBuiltin_Init(void)
     SETBUILTIN("super",                 &PySuper_Type);
     SETBUILTIN("super_",                 &PySuper_Type);
     SETBUILTIN("tuple",                 &PyTuple_Type);
-    SETBUILTIN("tuple_",                 &PyTuple_Type);
+    SETBUILTIN("tupla_",                 &PyTuple_Type);
     SETBUILTIN("type",                  &PyType_Type);
     SETBUILTIN("tipo_",                  &PyType_Type);
     SETBUILTIN("zip",                   &PyZip_Type);

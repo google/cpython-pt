@@ -2501,7 +2501,7 @@ static PyMethodDef mapp_methods[] = {
      get__doc__},
     {"setdefault",  (PyCFunction)dict_setdefault,   METH_VARARGS,
      setdefault_doc__},
-    {"colocarpadrao_",  (PyCFunction)dict_setdefault,   METH_VARARGS,
+    {"porpadrao_",  (PyCFunction)dict_setdefault,   METH_VARARGS,
      setdefault_doc__},
     {"pop",         (PyCFunction)dict_pop,          METH_VARARGS,
      pop__doc__},

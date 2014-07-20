@@ -2361,7 +2361,7 @@ static PyMethodDef list_methods[] = {
     {"__reversed__",(PyCFunction)list_reversed, METH_NOARGS, reversed_doc},
     {"__sizeof__",  (PyCFunction)list_sizeof, METH_NOARGS, sizeof_doc},
     {"clear",           (PyCFunction)listclear,   METH_NOARGS, clear_doc},
-    {"apagar_",           (PyCFunction)listclear,   METH_NOARGS, clear_doc},
+    {"limpar_",           (PyCFunction)listclear,   METH_NOARGS, clear_doc},
     {"copy",            (PyCFunction)listcopy,   METH_NOARGS, copy_doc},
     {"copiar_",            (PyCFunction)listcopy,   METH_NOARGS, copy_doc},
     {"append",          (PyCFunction)listappend,  METH_O, append_doc},

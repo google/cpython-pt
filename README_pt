@@ -1,0 +1,275 @@
+This is a modified version of Python that contains keywords and built-in methods and functions
+in Portuguese.
+
+Below are the portuguese translations, in the format EN -> PT:
+
+Keywords
+--------
+
+def -> def_
+import -> importar_
+del -> del_
+pass -> passar_
+break -> quebrar_
+continue -> continuar_
+return -> retornar_
+raise -> levantar_
+from -> de_
+as -> como_
+global -> global_
+nonlocal -> naolocal_
+assert -> afirmar_
+if -> se_
+elif -> se_se
+else -> senao_
+while -> enquanto_
+for -> para_
+in -> em_
+try -> tentar_
+finally -> finalmente_
+with -> com_
+except -> exceto_
+lambda -> lambda_
+or -> ou_
+and -> e_
+not -> nao_
+is -> eh_
+class -> classe_
+for -> para_
+yield -> ceder_
+
+
+Built-In Functions
+------------------
+
+abs -> abs_
+all -> todos_
+any -> qualquer_
+ascii -> ascii_
+bin -> bin_
+callable -> chamavel_
+chr -> car_
+compile -> compilar_
+delattr -> delatr_
+dir -> dir_
+divmod -> divresto_
+eval -> aval_
+exec -> exec_
+format -> formatar_
+getattr -> pegaratr_
+globals -> globals_
+hasattr -> tematr_
+hash -> hash_
+hex -> hex_
+id -> id_
+input -> entrada_
+isinstance -> ehinstancia_
+issubclass -> ehsubclasse_
+iter -> iter_
+len -> compr_
+locals -> locais_
+max -> max_
+min -> min_
+next -> proximo_
+oct -> octal_
+ord -> ord_
+pow -> pot_
+print -> imprimir_
+repr -> repr_
+round -> arred_
+setattr -> poratr_
+sorted -> ordenado_
+sum -> soma_
+vars -> vars_
+
+bool -> bool_
+memoryview -> visaomemoria_
+bytearray -> arranjodebytes_
+bytes -> bytes_
+classmethod -> metododeclasse_
+complex -> complexo_
+dict -> dic_
+enumerate -> enumerar_
+filter -> filtrar_
+float -> decimal_
+frozenset -> setcongelado_
+property -> prop_
+int -> int_
+list -> lista_
+map -> mapear_
+object -> objeto_
+range -> intervalo_
+reversed -> reverso_
+set -> conjunto_
+slice -> partir_
+staticmethod -> metodoestatico_
+str -> texto_
+super -> super_
+tuple -> tupla_
+type -> tipo_
+zip -> zipar_
+
+
+Boolean Values
+--------------
+
+False -> Falso_
+True -> Verd_
+
+
+List Methods
+------------
+
+clear -> limpar_
+copy -> copiar_
+append -> anexar_
+insert -> inserir_
+extend -> extender_
+pop -> pop_
+remove -> remover_
+index -> index_
+count -> contar_
+reverse -> inverter_
+sort -> ordenar_
+
+
+Dictionary Methods
+------------------
+
+get -> pegar_
+setdefault -> porpadrao_
+pop -> pop_
+popitem -> popitem_
+keys -> chaves_
+items -> itens_
+values -> valores_
+update -> atualizar_
+fromkeys_ dechaves_
+clear -> limpar_
+copy -> copiar_
+
+
+Tuple Methods
+-------------
+
+index -> index_
+count -> contar_
+
+
+Unicode (String) Methods
+---------------
+
+encode -> codificar_
+replace -> substituir_
+split -> partir_
+rsplit -> partirdir_
+join -> juntar_
+capitalize -> capitalizar_
+title -> titulo_
+center -> centralizar_
+count -> contar_
+expandtabs -> expandirtabs_
+find -> achar_
+partition -> particionar_
+index -> index_
+ljust -> justesq_
+lower -> minusc_
+lstrip -> tiraresq_
+rfind -> achardir_
+rindex -> indexdir_
+rjust -> justdir_
+rstrip -> tirardir_
+rpartition -> particionardir_
+splitlines -> partirlinhas_
+strip -> tirar_
+swapcase -> trocarcapit_
+translate -> traduzir_
+upper -> maiusc_
+startswith -> comecacom_
+endswith -> terminacaom_
+islower -> ehminusc_
+isupper -> ehmaiusc_
+istitle -> ehtitulo_
+isspace -> ehespaco_
+isdecimal -> ehdecimal_
+isdigit -> ehdigito_
+isnumeric -> ehnumerico_
+isalpha -> ehalfa_
+isalnum -> ehalnum_
+isidentifier -> ehidentificador_
+isprintable -> ehimprimivel_
+zfill -> zpreencher_
+format -> formatar_
+format_map -> mapa_formato_
+maketrans -> fazertraducao_
+
+
+ByteArray Methods
+-----------------
+
+append -> anexar_
+capitalize -> capitalizar_
+center -> centralizar_
+clear -> limpar_
+copy -> copiar_
+count -> contar_
+decode -> decodificar_
+endswith -> terminacom_
+expandtabs -> expandirtabs_
+extend -> extender_
+find -> achar_
+fromhex -> dehex_
+index -> index_
+insert -> inserir_
+isalnum -> ehalnum_
+isalpha -> ehalfa_
+isdigit -> ehdigito_
+islower -> ehminusc_
+isspace -> ehespaco_
+istitle -> ehtitulo_
+isupper -> ehmaiusc_
+join ->  juntar_
+ljust -> justesq_
+lower -> minusc_
+lstrip -> tiraresq_
+maketrans -> fazertraducao_
+partition -> particionar_
+pop -> pop_
+remove -> remover_
+replace -> substituir_
+reverse -> inverter_
+rfind -> achardir_
+rindex -> indexdir_
+rjust -> justdir_
+rpartition -> particionardir_
+rsplit -> partirdir_
+rstrip -> tirardir_
+split -> partir_
+splitlines -> partirlinhas_
+startswith -> comecacom_
+strip -> tirar_
+swapcase -> trocarcapit_
+title -> titulo_
+translate -> traduzir_
+upper -> maiusc_
+zfill -> zpreencher_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
