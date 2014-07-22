@@ -1,10 +1,19 @@
 This is a modified version of Python that contains keywords and built-in methods and functions
 in Portuguese.
 
-Below are the portuguese translations, in the format EN -> PT:
+Below are the portuguese translations, in the format English -> Portuguese:
 
-Keywords
---------
+------
+
+Esta é uma versão modificada de Python que contém palavras-chave e métodos e funções internas traduzidas para o português.
+
+Abaixo estão as traduções para o português, no formato Inglês -> Português
+
+------
+
+
+Keywords / Palavras-Chave
+-------------------------
 
 def -> def_
 import -> importar_
@@ -39,8 +48,8 @@ for -> para_
 yield -> ceder_
 
 
-Built-In Functions
-------------------
+Built-In Functions - Funções Internas
+-------------------------------------
 
 abs -> abs_
 all -> todos_
@@ -110,15 +119,15 @@ type -> tipo_
 zip -> zipar_
 
 
-Boolean Values
---------------
+Boolean Values - Valores de Boolean
+-----------------------------------
 
 False -> Falso_
 True -> Verd_
 
 
-List Methods
-------------
+List Methods - Métodos de Lista
+-------------------------------
 
 clear -> limpar_
 copy -> copiar_
@@ -133,8 +142,8 @@ reverse -> inverter_
 sort -> ordenar_
 
 
-Dictionary Methods
-------------------
+Dictionary Methods - Métodos de Dicionário
+------------------------------------------
 
 get -> pegar_
 setdefault -> porpadrao_
@@ -149,15 +158,15 @@ clear -> limpar_
 copy -> copiar_
 
 
-Tuple Methods
--------------
+Tuple Methods - Métodos de Tupla
+--------------------------------
 
 index -> index_
 count -> contar_
 
 
-Unicode (String) Methods
----------------
+Unicode (String) Methods / Métodos de Unicode (Texto)
+-----------------------------------------------------
 
 encode -> codificar_
 replace -> substituir_
@@ -204,8 +213,8 @@ format_map -> mapa_formato_
 maketrans -> fazertraducao_
 
 
-ByteArray Methods
------------------
+ByteArray Methods / Métodos de Arranjo de Bytes
+-----------------------------------------------
 
 append -> anexar_
 capitalize -> capitalizar_

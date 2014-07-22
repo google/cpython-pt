@@ -1,6 +1,8 @@
 This is Python version 3.3.5
 ============================
 
+Copyright 2014 Google, Inc.
+
 Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011,
 2012, 2013, 2014 Python Software Foundation.  All rights reserved.
 
@@ -8,6 +10,12 @@ Python 3.x is a new version of the language, which is incompatible with the 2.x
 line of releases.  The language is mostly the same, but many details, especially
 how built-in objects like dictionaries and strings work, have changed
 considerably, and a lot of deprecated features have finally been removed.
+
+
+About Google's Fork
+-------------------
+
+This project represent's Google's fork of cpython. Google's cpython differs from the original in that additional keywords and built-in functions and methods have been added. These are words in Portuguese that map to existing functions. This means that no new behavior has been added to Python.
 
 
 Build Instructions
@@ -173,6 +181,8 @@ See PEP 398 for release details: http://www.python.org/dev/peps/pep-0398/
 
 Copyright and License Information
 ---------------------------------
+
+Copyright 2014 Google, Inc.
 
 Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011,
 2012, 2013, 2014 Python Software Foundation.  All rights reserved.
