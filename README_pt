@@ -1,19 +1,21 @@
+ENGLISH
+============================
+
 This is a modified version of Python that contains keywords and built-in methods and functions
 in Portuguese.
 
 Below are the portuguese translations, in the format English -> Portuguese:
 
-------
+PORTUGUESE
+============================
 
 Esta é uma versão modificada de Python que contém palavras-chave e métodos e funções internas traduzidas para o português.
 
 Abaixo estão as traduções para o português, no formato Inglês -> Português
 
-------
 
-
-Keywords / Palavras-Chave
--------------------------
+KEYWORDS / PALAVRAS-CHAVE
+============================
 
 def -> def_
 import -> importar_
