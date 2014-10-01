@@ -2641,6 +2641,7 @@ static PyMethodDef builtin_methods[] = {
     {"ord",             builtin_ord,        METH_O, ord_doc},
     {"pow",             builtin_pow,        METH_VARARGS, pow_doc},
     {"print",           (PyCFunction)builtin_print,      METH_VARARGS | METH_KEYWORDS, print_doc},
+    {"imprimir",           (PyCFunction)builtin_print,      METH_VARARGS | METH_KEYWORDS, print_doc},
     {"range",           builtin_range,      METH_VARARGS, range_doc},
     {"raw_input",       builtin_raw_input,  METH_VARARGS, raw_input_doc},
     {"reduce",          builtin_reduce,     METH_VARARGS, reduce_doc},
@@ -2650,6 +2651,7 @@ static PyMethodDef builtin_methods[] = {
     {"setattr",         builtin_setattr,    METH_VARARGS, setattr_doc},
     {"sorted",          (PyCFunction)builtin_sorted,     METH_VARARGS | METH_KEYWORDS, sorted_doc},
     {"sum",             builtin_sum,        METH_VARARGS, sum_doc},
+    {"soma",             builtin_sum,        METH_VARARGS, sum_doc},
 #ifdef Py_USING_UNICODE
     {"unichr",          builtin_unichr,     METH_VARARGS, unichr_doc},
 #endif
