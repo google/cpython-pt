@@ -197,7 +197,7 @@ swapcase -> trocarcapit_
 translate -> traduzir_
 upper -> maiusc_
 startswith -> comecacom_
-endswith -> terminacaom_
+endswith -> terminacom_
 islower -> ehminusc_
 isupper -> ehmaiusc_
 istitle -> ehtitulo_
